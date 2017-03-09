@@ -28,6 +28,7 @@ public class PatrolHistoryDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_patrolhistory_detail);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.detail_toolbar);
+        toolbar.setTitle("History");
         setSupportActionBar(toolbar);
 
         // Show the Up button in the action bar.
@@ -51,6 +52,8 @@ public class PatrolHistoryDetailActivity extends AppCompatActivity {
             Bundle arguments = new Bundle();
             arguments.putString(PatrolManager.PM_KEY,
                     getIntent().getStringExtra(PatrolManager.PM_KEY));
+
+            arguments.putString("PATROL_TITLE", getIntent().getStringExtra("PATROL_TITLE"));
 
             PatrolHistoryDetailFragment fragment = new PatrolHistoryDetailFragment();
             fragment.setArguments(arguments);

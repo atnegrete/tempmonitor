@@ -53,8 +53,8 @@ public class PatrolHistoryListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_patrolhistory_list);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         toolbar.setTitle("Patrols History");
+        setSupportActionBar(toolbar);
 
         // Show the Up button in the action bar.
         ActionBar actionBar = getSupportActionBar();
@@ -145,6 +145,7 @@ public class PatrolHistoryListActivity extends AppCompatActivity {
                     if (mTwoPane) {
                         Bundle arguments = new Bundle();
                         arguments.putString(PatrolHistoryDetailFragment.ARG_ITEM_ID, holder.mItem.getStringId());
+                        arguments.putString("PATROL_TITLE", mValues.get(position).getDatetime());
                         PatrolHistoryDetailFragment fragment = new PatrolHistoryDetailFragment();
                         fragment.setArguments(arguments);
                         getSupportFragmentManager().beginTransaction()
@@ -154,6 +155,7 @@ public class PatrolHistoryListActivity extends AppCompatActivity {
                         //getHelper.getPatrolLogs(null, getApplicationContext(), mValues.get(position).getStringId());
                         Intent intent = new Intent(PatrolHistoryListActivity.this, PatrolHistoryDetailActivity.class);
                         intent.putExtra(PatrolManager.PM_KEY, holder.mItem.getStringId());
+                        intent.putExtra("PATROL_TITLE", mValues.get(position).getDatetime());
                         startActivity(intent);
                     }
                 }
@@ -177,7 +179,7 @@ public class PatrolHistoryListActivity extends AppCompatActivity {
                 mView = view;
                 mIdView = (TextView) view.findViewById(R.id.pmh_id);
                 mDateView = (TextView) view.findViewById(R.id.pmh_date);
-                mUserView = (TextView) view.findViewById(R.id.pmg_user);
+                mUserView = (TextView) view.findViewById(R.id.pmh_user);
             }
 
             @Override

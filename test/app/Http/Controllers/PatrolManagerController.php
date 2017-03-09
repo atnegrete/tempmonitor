@@ -16,6 +16,13 @@ class PatrolManagerController extends BaseController
         return $data;
     }
 
+    public function getLogs($id) {
+        $patrol = Patrol::find($id);
+        $logs = $patrol->logs()->get();
+
+        return $logs;
+    }
+
     public function addPatrol(Request $request){
 
         $data = $request->all()['patrol_manager'];

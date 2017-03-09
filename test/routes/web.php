@@ -33,4 +33,5 @@ $app->post('/save-patrol', function (\Illuminate\Http\Request $request)
 
 
 $app->post('/complete-patrol', 'PatrolManagerController@addPatrol');
-$app->get('/history', 'PatrolManagerController@getHistory');
+$app->post('/history', 'PatrolManagerController@getHistory');
+$app->post('/history-logs/{id}', 'PatrolManagerController@getLogs');
