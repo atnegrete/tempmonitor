@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="myPink">#B39DDB</color>
+    <color name="myPurple">#FCE4EC</color>
+    <color name="myLightBlue">#03A9F4</color>
+    <color name="myLightBlueHue">#80D8FF</color>
+    <color name="myDarkBlue">#0091EA</color>
+    <color name="myLightGreen">#B2FF59</color>
+    <color name="myVeryLightBlue">#E1F5FE</color>
+    <color name="myVeryLightBlue2">#B3E5FC</color>
+
+
+</resources>
