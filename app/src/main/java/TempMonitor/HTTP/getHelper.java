@@ -3,6 +3,7 @@ package tempmonitor.HTTP;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+import android.widget.Toast;
 
 import tempmonitor.PatrolManagerHistory.TempLog;
 import com.loopj.android.http.AsyncHttpClient;
@@ -60,6 +61,7 @@ public class getHelper {
             @Override
             public void onFailure(int statusCode, cz.msebera.android.httpclient.Header[] headers, String responseString, Throwable throwable) {
                 Log.e("FAILED", "Code: "+ statusCode + "  Response: " +  throwable.toString());
+                Toast.makeText(context, "Error Code: " + statusCode + ". Check your internet settings or try again later.", Toast.LENGTH_LONG).show();
             }
 
             @Override

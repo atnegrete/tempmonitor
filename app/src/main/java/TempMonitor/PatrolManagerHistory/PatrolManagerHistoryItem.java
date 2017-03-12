@@ -12,10 +12,13 @@ public class PatrolManagerHistoryItem {
     public String user;
     public String created_at;
 
+    public String updated_at;
+
     public PatrolManagerHistoryItem(int id, String user, String created_at, String updated_at){
         this.id = id;
         this.user = user;
         this.created_at = created_at;
+        this.updated_at = updated_at;
     }
 
     public String getDatetime() {
@@ -44,4 +47,11 @@ public class PatrolManagerHistoryItem {
         this.user = user;
     }
 
+    public String getUpdated_at() {
+        return updated_at;
+    }
+
+    public void setUpdated_at(String updated_at) {
+        this.updated_at = updated_at;
+    }
 }

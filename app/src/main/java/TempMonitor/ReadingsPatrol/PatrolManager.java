@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.util.Log;
+import android.widget.Toast;
 
 import tempmonitor.FileHandlers.FileManager;
 import tempmonitor.HTTP.TempMonitorRestClient;
@@ -112,7 +113,7 @@ public class PatrolManager implements Serializable {
         });
     }
 
-    public static void postCompletePatrol(RequestParams params){
+    public static void postCompletePatrol(final Context context, RequestParams params){
         TempMonitorRestClient.post("/complete-patrol", params, new TextHttpResponseHandler() {
 
             @Override
@@ -121,11 +122,14 @@ public class PatrolManager implements Serializable {
                 PatrolManager patrol_manager = gson.fromJson(responseString, PatrolManager.class);
 
                 AsyncHttpClient.log.e(AsyncHttpClient.LOG_TAG, "SUCCESS_MESSAGE : " + responseString);
+
+                Toast.makeText(context, "Sync. Successful", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onFailure(int statusCode, cz.msebera.android.httpclient.Header[] headers, String responseString, Throwable throwable) {
                 Log.e("FAILED", "Code: "+ statusCode + "  Response: " +  throwable.toString());
+                Toast.makeText(context, "Sync. error", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -136,24 +140,20 @@ public class PatrolManager implements Serializable {
         });
     }
 
+    /**
+     * Send data to DB.
+     *
+     * @param activity
+     */
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void finishPatrol(Activity activity) {
         RequestParams params = new RequestParams();
         params.put(PatrolManager.PM_KEY, this.toJson());
-//        PatrolManager.getPatrolHistory(params);
-        PatrolManager.postCompletePatrol(params);
+
+        PatrolManager.postCompletePatrol(activity.getApplicationContext(), params);
 
         FileManager.savePatrolManager(activity.getApplicationContext(), new PatrolManager(TempItemMaker.ITEMS));
         activity.finish();
-    }
-
-    @Override
-    public String toString(){
-        String str = null;
-
-        str = "Patrol Manager || progress: " + progress + " || " + temp_items.get(0).temp;
-
-        return str;
     }
 
     public String toJson(){

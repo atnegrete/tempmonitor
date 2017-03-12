@@ -201,17 +201,15 @@ public class ReadingListActivity extends AppCompatActivity {
                 public void onClick(DialogInterface dialog, int which) {
                     String m_Text = input.getText().toString();
                     patrol_manager.setUser(m_Text);
-                    //Toast.makeText(ReadingListActivity.this, "name: " + m_Text, Toast.LENGTH_SHORT).show();
+                    patrol_manager.finishPatrol(ReadingListActivity.this);
                 }
             });
 
             builder.show();
         }else{
             patrol_manager.setUser(user.getUsername());
-
+            patrol_manager.finishPatrol(ReadingListActivity.this);
         }
-
-        patrol_manager.finishPatrol(ReadingListActivity.this);
     }
 
 

@@ -141,8 +141,6 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_history) {
             Intent intent = new Intent(HomeActivity.this, DatePatrolHistory.class);
             startActivity(intent);
-//            Intent intent = new Intent(HomeActivity.this, PatrolHistoryListActivity.class);
-//            startActivity(intent);
 
         } else if (id == R.id.nav_settings) {
             Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
