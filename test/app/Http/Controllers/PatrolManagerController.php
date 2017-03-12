@@ -3,12 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Patrol;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Laravel\Lumen\Routing\Controller as BaseController;
-use phpDocumentor\Reflection\Location;
 
 class PatrolManagerController extends BaseController
 {
+
+    public function getDateHistory($date){
+
+        $to_date = Carbon::createFromFormat('Y-m-d', $date);
+        $to_date->addDays(1);
+
+        $patrols = Patrol::where([
+            ['created_at', '>=', $date.' 00:00:00'],
+            ['created_at', '<=', $to_date.' 00:00:00']
+        ])->get();
+
+        return $patrols;
+    }
 
     public function getHistory(){
         $data = Patrol::all();

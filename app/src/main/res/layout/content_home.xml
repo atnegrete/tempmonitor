@@ -10,10 +10,84 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.alan.tempmonitor.HomeActivity">
+    tools:context="com.example.alan.tempmonitor.TempMonitor.HomeActivity">
 
     <TextView
+        android:id="@+id/tv_welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to Temp Monitor!" />
+        android:text="Welcome to Temp Monitor!"
+        android:layout_marginTop="4dp"
+        android:textSize="24dp"
+        android:textColor="@color/colorPrimary"
+        android:layout_centerHorizontal="true"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_welcome"
+        android:layout_marginTop="8dp"
+        android:id="@+id/ll_one">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_check_black_36dp"/>
+
+        <TextView
+            android:layout_width="305dp"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/background_dark"
+            android:text="Save recodings and start again later!"
+            android:textSize="20dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_one"
+        android:layout_marginTop="8dp"
+        android:id="@+id/ll_two">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_check_black_36dp"/>
+
+        <TextView
+            android:layout_width="305dp"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/background_dark"
+            android:text="Easily preview backlogs and history!"
+            android:textSize="20dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_two"
+        android:layout_marginTop="8dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_check_black_36dp"/>
+
+        <TextView
+            android:layout_width="305dp"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/background_dark"
+            android:text="Visualize data"
+            android:textSize="20dp"
+            />
+    </LinearLayout>
+
+
+
+
 </RelativeLayout>

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.alan.tempmonitor.ReadingDetailActivity"
+    tools:context="tempmonitor.ReadingsPatrol.ReadingDetailActivity"
     tools:ignore="MergeRootFrame">
 
     <android.support.design.widget.AppBarLayout

@@ -10,6 +10,6 @@
     android:layout_marginRight="16dp"
     android:layout_marginBottom="2dp"
     app:layoutManager="LinearLayoutManager"
-    tools:context="com.example.alan.tempmonitor.ReadingListActivity"
+    tools:context="tempmonitor.ReadingsPatrol.ReadingListActivity"
     tools:listitem="@layout/reading_list_content"
     />

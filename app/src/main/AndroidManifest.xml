@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.alan.tempmonitor">
+    package="tempmonitor">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -10,52 +10,80 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
-            android:name=".HomeActivity"
+            android:name="tempmonitor.LoginRegister.LoginActivity"
+            android:label="@string/app_name">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="tempmonitor.HomeActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="tempmonitor.LoginRegister.LoginActivity" />
         </activity>
         <activity
-            android:name=".ReadingListActivity"
+            android:name="tempmonitor.ReadingsPatrol.ReadingListActivity"
             android:label="@string/title_reading_list"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".ReadingDetailActivity"
+            android:name="tempmonitor.ReadingsPatrol.ReadingDetailActivity"
             android:label="@string/title_reading_detail"
-            android:parentActivityName=".ReadingListActivity"
+            android:parentActivityName="tempmonitor.ReadingsPatrol.ReadingListActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.alan.tempmonitor.ReadingListActivity" />
+                android:value="tempmonitor.ReadingsPatrol.ReadingListActivity" />
         </activity>
         <activity
-            android:name=".PatrolManagerHistory.PatrolHistoryListActivity"
+            android:name="tempmonitor.PatrolManagerHistory.PatrolHistoryListActivity"
             android:label="@string/title_patrolhistory_list"
-            android:parentActivityName=".HomeActivity"
+            android:parentActivityName="tempmonitor.HomeActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.alan.tempmonitor.HomeActivity" />
+                android:value=".HomeActivity" />
         </activity>
         <activity
-            android:name=".PatrolManagerHistory.PatrolHistoryDetailActivity"
+            android:name="tempmonitor.PatrolManagerHistory.PatrolHistoryDetailActivity"
             android:label="@string/title_patrolhistory_detail"
-            android:parentActivityName=".PatrolManagerHistory.PatrolHistoryListActivity"
+            android:parentActivityName="tempmonitor.PatrolManagerHistory.PatrolHistoryListActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.alan.tempmonitor.PatrolManagerHistory.PatrolHistoryListActivity" />
+                android:value="tempmonitor.PatrolManagerHistory.PatrolHistoryListActivity" />
+        </activity>
+        <activity
+            android:name="tempmonitor.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName="tempmonitor.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomeActivity" />
+        </activity>
+        <activity
+            android:name="tempmonitor.PatrolManagerHistory.DatePatrolHistory"
+            android:label="@string/title_activity_date_patrol_history"
+            android:parentActivityName="tempmonitor.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomeActivity" />
         </activity>
     </application>
 

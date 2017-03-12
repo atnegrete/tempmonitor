@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".PatrolManagerHistory.PatrolHistoryListActivity">
+    tools:context="tempmonitor.PatrolManagerHistory.PatrolHistoryListActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
@@ -26,7 +26,7 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <include layout="@layout/patrolhistory_list"></include>
+        <include layout="@layout/patrol_history_list"></include>
     </FrameLayout>
 
 
