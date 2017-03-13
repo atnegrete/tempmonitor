@@ -1,5 +1,7 @@
 package tempmonitor.PatrolManagerHistory;
 
+import android.util.Log;
+
 /**
  * Created by anegrete on 3/5/2017.
  */
@@ -28,7 +30,7 @@ public class TempLog {
     }
 
     public String getTemperature() {
-        return (temperature == "0") ? "N/A" : temperature + "\u00b0" + "F";
+        return (temperature.equals("0") || temperature.equals("0.0") ) ? "N/A" : temperature + "\u00b0" + "F";
     }
 
     public void setTemperature(String temp) {

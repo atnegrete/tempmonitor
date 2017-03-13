@@ -29,9 +29,9 @@ public class TempItemMaker {
         addItem(new TemperatureItem("7", "N.E. 1st Floor", "Description", 70.0, 0));
         addItem(new TemperatureItem("8", "N.E. 2st Floor", "Description", 70.0, 0));
         addItem(new TemperatureItem("9", "N.E. 3st Floor", "Description", 70.0, 0));
-        addItem(new TemperatureItem("10", "S. Wing 1st Floor", "Description", 70.0, 0));
-        addItem(new TemperatureItem("11", "S. Wing 2st Floor", "Description", 70.0, 0));
-        addItem(new TemperatureItem("12", "W. Wing 3st Floor", "Description", 70.0, 0));
+        addItem(new TemperatureItem("10", "S.W. Basement", "Description", 70.0, 0));
+        addItem(new TemperatureItem("11", "S.W. 1st Floor", "Description", 70.0, 0));
+        addItem(new TemperatureItem("12", "S.W. 2nd Floor", "Description", 70.0, 0));
         addItem(new TemperatureItem("13", "N. Annex Basement", "Description", 70.0, 0));
         addItem(new TemperatureItem("14", "N. Annex 1st Floor", "Description", 70.0, 0));
         addItem(new TemperatureItem("15", "District 1 Basement", "Description", 70.0, 0));

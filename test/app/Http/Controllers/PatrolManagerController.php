@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use App\Patrol;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -15,10 +16,12 @@ class PatrolManagerController extends BaseController
         $to_date = Carbon::createFromFormat('Y-m-d', $date);
         $to_date->addDays(1);
 
-        $patrols = Patrol::where([
-            ['created_at', '>=', $date.' 00:00:00'],
-            ['created_at', '<=', $to_date.' 00:00:00']
-        ])->get();
+//        $patrols = DB::table('patrols')->where([
+//            ['created_at', '>=', '2017-03-04 12:00:00'],
+//            ['created_at', '<=', '2017-03-04 13:00:00']
+//        ])->get();
+
+        $patrols = Patrol::whereDate('created_at', '=', $date)->get();
 
         return $patrols;
     }
