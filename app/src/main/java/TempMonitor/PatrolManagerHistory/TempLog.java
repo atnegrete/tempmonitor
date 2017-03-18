@@ -2,6 +2,10 @@ package tempmonitor.PatrolManagerHistory;
 
 import android.util.Log;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by anegrete on 3/5/2017.
  */
@@ -31,6 +35,10 @@ public class TempLog {
 
     public String getTemperature() {
         return (temperature.equals("0") || temperature.equals("0.0") ) ? "N/A" : temperature + "\u00b0" + "F";
+    }
+
+    public Float getTemperatureFloat(){
+        return new Float(this.temperature);
     }
 
     public void setTemperature(String temp) {

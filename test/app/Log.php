@@ -20,7 +20,7 @@ class Log extends Model
     ];
 
     public function patrol(){
-        return $this->belongsTo('App\Patrol');
+        return $this->belongsTo('App\Patrol')->first();
     }
 
 

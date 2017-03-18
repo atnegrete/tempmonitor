@@ -8,7 +8,11 @@ import java.util.HashMap;
 
 public class LocationsMap {
 
-    public static String getLocationString(String id){
+    public static int getLocationsCount(){
+        return getLocationMap().size();
+    }
+
+    public static HashMap<String, String> getLocationMap(){
         HashMap<String, String> LOCATION_MAP = new HashMap<>();
 
         LOCATION_MAP.put("1", "Admin 1st Floor");
@@ -28,7 +32,11 @@ public class LocationsMap {
         LOCATION_MAP.put("15", "District 1 Basement");
         LOCATION_MAP.put("16", "District 1 1st Floor");
 
-        return LOCATION_MAP.get(id);
+        return LOCATION_MAP;
+    }
+
+    public static String getLocationString(String id){
+        return getLocationMap().get(id);
     }
 
 }

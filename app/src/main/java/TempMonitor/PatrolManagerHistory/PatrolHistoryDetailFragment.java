@@ -33,7 +33,6 @@ public class PatrolHistoryDetailFragment extends Fragment {
     public final BroadcastReceiver receiver = new myBroadCastReceiver();
     public TempLog[] logs;
     public ListView list_view;
-    TempLogListAdapter adapter;
     View rootView;
 
     /**

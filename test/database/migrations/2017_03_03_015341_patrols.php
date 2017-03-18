@@ -16,7 +16,8 @@ class Patrols extends Migration
         Schema::create('patrols', function (Blueprint $table){
             $table->increments('id');
             $table->string('user');
-            $table->timestamps();
+            $this->timestamp('updated_at');
+            $this->timestamp('created_at');
         });
     }
 

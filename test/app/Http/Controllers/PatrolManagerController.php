@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Log;
 use DB;
 use App\Patrol;
 use Carbon\Carbon;
@@ -13,15 +14,7 @@ class PatrolManagerController extends BaseController
 
     public function getDateHistory($date){
 
-        $to_date = Carbon::createFromFormat('Y-m-d', $date);
-        $to_date->addDays(1);
-
-//        $patrols = DB::table('patrols')->where([
-//            ['created_at', '>=', '2017-03-04 12:00:00'],
-//            ['created_at', '<=', '2017-03-04 13:00:00']
-//        ])->get();
-
-        $patrols = Patrol::whereDate('created_at', '=', $date)->get();
+        $patrols = Patrol::whereDate('created_at', '=', $date.' 00:00:00')->get();
 
         return $patrols;
     }
@@ -33,10 +26,41 @@ class PatrolManagerController extends BaseController
     }
 
     public function getLogs($id) {
-        $patrol = Patrol::find($id);
-        $logs = $patrol->logs()->get();
 
-        return $logs;
+        if($id == '-1'){
+
+            return Log::all();
+
+        }else{
+
+            $patrol = Patrol::find($id);
+            $logs = $patrol->logs()->get();
+
+            return $logs;
+        }
+    }
+
+    public function getPatrolWithLogs($id) {
+
+        if($id == '-1'){
+
+            $patrols = Patrol::all();
+            foreach($patrols as $patrol){
+                $logs = $patrol->logs();
+                $patrol->logs = $logs;
+            }
+
+            return $patrols;
+
+        }else{
+
+            $patrol = Patrol::find($id);
+            $logs = $patrol->logs();
+            $patrol->logs = $logs;
+
+            return $patrol;
+
+        }
     }
 
     public function addPatrol(Request $request){

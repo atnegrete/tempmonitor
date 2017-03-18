@@ -15,6 +15,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.alan.tempmonitor.LineChartActivity;
+
 import tempmonitor.FileHandlers.FileManager;
 import tempmonitor.PatrolManagerHistory.DatePatrolHistory;
 import tempmonitor.ReadingsPatrol.PatrolManager;
@@ -140,6 +142,10 @@ public class HomeActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_history) {
             Intent intent = new Intent(HomeActivity.this, DatePatrolHistory.class);
+            startActivity(intent);
+
+        } else if (id == R.id.nav_visuals) {
+            Intent intent = new Intent(HomeActivity.this, LineChartActivity.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_settings) {

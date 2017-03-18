@@ -17,7 +17,7 @@ class Patrol extends Model
     ];
 
     public function logs(){
-        return $this->hasMany('App\Log');
+        return $this->hasMany('App\Log')->get();
     }
 
 

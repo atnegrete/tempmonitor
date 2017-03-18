@@ -82,16 +82,6 @@ public class PatrolManager implements Serializable {
             @Override
             public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, String responseString) {
 
-//                Bundle bundle = new Bundle();
-//                Intent intent = new Intent(context, PatrolHistoryListActivity.class);
-//                bundle.putString("history_key", responseString);
-//                intent.putExtras(bundle);
-//                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//
-//                AsyncHttpClient.log.e(AsyncHttpClient.LOG_TAG, "SUCCESS_MESSAGE : " + responseString.toString());
-//
-//                context.startActivity(intent);
-
                 Intent intent = new Intent("LOAD_HISTORY");
                 intent.putExtra("history_key", responseString);
 
